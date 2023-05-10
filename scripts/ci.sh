@@ -7,7 +7,7 @@ if [ $# -eq 0 ]; then
     exit -1
 fi
 
-retries=3
+retries=1
 speedFactor="${2:-1}"
 
 runTest () {

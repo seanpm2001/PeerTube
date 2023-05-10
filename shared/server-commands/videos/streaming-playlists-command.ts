@@ -40,6 +40,8 @@ export class StreamingPlaylistsCommand extends AbstractCommand {
 
       await wait(250)
 
+      console.log('Retrying get', err)
+
       return this.get({
         ...options,
 
@@ -75,6 +77,8 @@ export class StreamingPlaylistsCommand extends AbstractCommand {
 
       await wait(250)
 
+      console.log('Retrying getFragmentedSegment', err)
+
       return this.getFragmentedSegment({
         ...options,
 
@@ -107,6 +111,8 @@ export class StreamingPlaylistsCommand extends AbstractCommand {
       if (!withRetry || currentRetry > 10) throw err
 
       await wait(250)
+
+      console.log('Retrying getSegmentSha256', err)
 
       return this.getSegmentSha256({
         ...options,
